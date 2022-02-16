@@ -55,5 +55,6 @@ client.on('message', message => {
     }
 });
 
+console.log(process.env.DISCORD_RATBOT_TOKEN)
 
-client.login('');
+client.login(process.env.DISCORD_RATBOT_TOKEN);
