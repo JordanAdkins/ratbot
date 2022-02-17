@@ -23,14 +23,8 @@ for(const file of commandFiles){
 
 client.on('ready', () => {
     
-  //  client.commands.get('rxnrolelisten').execute(client);
-    
+    client.commands.get('rxnrolelisten').execute(client);
     console.log('JermaBot is online!');
-
-    //const args = message.content.slice(prefix.length).split(/ +/);
-    //const command = args.shift().toLowerCase();
-
-    
 });
 
 
@@ -65,7 +59,4 @@ client.on('message', message => {
     //}
 });
 
-//console.log(process.env.DISCORD_RATBOT_TOKEN)
-
-//client.login(process.env.DISCORD_RATBOT_TOKEN);
-client.login('OTQxMTA5NTU4Mjg4NDcwMDI2.YgRKkw.makHnfDZ32IxA46Qnmeidue3iMw');
+client.login(process.env.DISCORD_RATBOT_TOKEN);

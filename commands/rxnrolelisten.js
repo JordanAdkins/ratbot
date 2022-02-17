@@ -1,26 +1,30 @@
 module.exports = {
     name: 'rxnrolelisten',
     description: "Listens for Reaction Inputs and assigns corresponding Roles!",
-    async execute(message, args, Discord, client) {
+    async execute(client) {
         const channel = '934941393732919296'; //rules channel
+        async function getRole(roleName){
+            var returnValue = client.guilds.fetch('736703069093363744')
+            .then(guild => guild.roles.fetch()
+            .then(roles => roles.find(value => value.name === roleName)));
+            return returnValue
+        };
 
-        const access = message.guild.roles.cache.find(role => role.name === "access"); //access to Server
+        const access = await getRole("access"); //access to Server
 
-        const ow = message.guild.roles.cache.find(role => role.name === "Overwatch posse");
-        const apex = message.guild.roles.cache.find(role => role.name === "Apex Thotties");
-        const lol = message.guild.roles.cache.find(role => role.name === "League of Legends");
-        const valorant = message.guild.roles.cache.find(role => role.name === "Valorant players (stinky)");
-        const nw = message.guild.roles.cache.find(role => role.name === "New World");
-        const warframe = message.guild.roles.cache.find(role => role.name === "Warframe");
-        const forest = message.guild.roles.cache.find(role => role.name === "The Forest dads");
-        const zomboid = message.guild.roles.cache.find(role => role.name === "Zomboids");
+        const ow = await getRole("Overwatch posse");
+        const apex = await getRole("Apex Thotties");
+        const lol = await getRole("League of Legends");
+        const valorant = await getRole("Valorant players (stinky)");
+        const warframe = await getRole("Warframe");
+        const forest = await getRole("The Forest dads");
+        const zomboid = await getRole("Zomboids");
 
-        const accessEmoji = "✅";
+        const accessEmoji = "935429715580309545";
         const owEmoji = "888581306529771590";
         const apexEmoji = "906717906476359751";
         const lolEmoji = "941175528805777419";
         const valorantEmoji = "896539011181592586";
-        const nwEmoji = "896539862671446047";
         const warframeEmoji = "897494566582767686";
         const forestEmoji = "896538935424081920";
         const zomboidEmoji = "941193841107693599";
@@ -48,9 +52,6 @@ module.exports = {
                 if(reaction.emoji.id === valorantEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, valorant]);
                 }
-                if(reaction.emoji.id === nwEmoji) {
-                    await reaction.message.guild.members.cache.get(user.id).roles.add([access, nw]);
-                }
                 if(reaction.emoji.id === warframeEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, warframe]);
                 }
@@ -59,7 +60,6 @@ module.exports = {
                 }
                 if(reaction.emoji.id === zomboidEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, zomboid]);
-                    console.log('JermaBot is React!');
                 }
                 if(reaction.emoji.id === accessEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(access);
@@ -93,9 +93,6 @@ module.exports = {
                 if(reaction.emoji.id === valorantEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([valorant]);
                 }
-                if(reaction.emoji.id === nwEmoji) {
-                    await reaction.message.guild.members.cache.get(user.id).roles.remove([nw]);
-                }
                 if(reaction.emoji.id === warframeEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([warframe]);
                 }
@@ -106,7 +103,7 @@ module.exports = {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([zomboid]);
                 }
                 if(reaction.emoji.id === accessEmoji) {
-                    await reaction.message.guild.members.cache.get(user.id).roles.remove(access);
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove([access]);
                 }
 
             } else {
