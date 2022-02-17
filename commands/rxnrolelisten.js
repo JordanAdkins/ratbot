@@ -65,8 +65,6 @@ module.exports = {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(access);
                 }
 
-                console.log("Assigning Role " + reaction.emoji.name + " to user " + reaction.message.guild.members.cache.get(user.id) );
-
             } else {
                 console.log("else");
                 return;
