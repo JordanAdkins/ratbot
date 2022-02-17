@@ -100,9 +100,9 @@ module.exports = {
                 if(reaction.emoji.id === zomboidEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([zomboid]);
                 }
-                if(reaction.emoji.id === accessEmoji) {
-                    await reaction.message.guild.members.cache.get(user.id).roles.remove([access]);
-                }
+             //  if(reaction.emoji.id === accessEmoji) {
+             //     await reaction.message.guild.members.cache.get(user.id).roles.remove([access]);
+             // }
 
             } else {
                 return;
