@@ -2,7 +2,7 @@ module.exports = {
     name: 'rxnrolelisten',
     description: "Listens for Reaction Inputs and assigns corresponding Roles!",
     async execute(client) {
-        const channel = '934941393732919296'; //rules channel
+        const channel = '941178139860664331'; //rules channel
         async function getRole(roleName){
             var returnValue = client.guilds.fetch('736703069093363744')
             .then(guild => guild.roles.fetch()
