@@ -30,8 +30,8 @@ module.exports = {
         const warframeEmoji = "897494566582767686";
         const forestEmoji = "896538935424081920";
         const zomboidEmoji = "941193841107693599";
-        const partyEmoji = "991079037424271462";
-        const terrariaEmoji = "991080439592669254";
+        const partyEmoji = "708439567723921529";
+        const terrariaEmoji = "991100062572744754";
 
         //Listens for Reactions On and Off, and Assigns or Removes roles accordingly
               
@@ -67,6 +67,7 @@ module.exports = {
                 }
                 if(reaction.emoji.id === partyEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, party]);
+                    //console.log("jerma jerma");
                 }
                 if(reaction.emoji.id === terrariaEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, terraria]);

@@ -53,10 +53,11 @@ client.on('message', message => {
         client.commands.get('burp').execute(message, args); 
     } else if (command === 'fart') {
         client.commands.get('fart').execute(message, args); 
-    }// else if (command === 'reactionrole') {
-     //   client.commands.get('reactionrole').execute(message, args, Discord, client);
+    } //else if (command === 'reactionrole') {
+        //client.commands.get('reactionrole').execute(message, args, Discord, client);
  
     //}
 });
 
-client.login(process.env.DISCORD_RATBOT_TOKEN);
+client.login("OTQxMTA5NTU4Mjg4NDcwMDI2.YgRKkw.DiwD73h8phKCBVVlOLb0VJAwrW0");
+//client.login(process.env.DISCORD_RATBOT_TOKEN);
