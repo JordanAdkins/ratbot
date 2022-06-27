@@ -19,6 +19,8 @@ module.exports = {
         const warframe = await getRole("Warframe");
         const forest = await getRole("The Forest dads");
         const zomboid = await getRole("Zomboids");
+        const party = await getRole("Party gamers");
+        const terraria = await getRole("Terraria");
 
         const accessEmoji = "935429715580309545";
         const owEmoji = "888581306529771590";
@@ -28,6 +30,8 @@ module.exports = {
         const warframeEmoji = "897494566582767686";
         const forestEmoji = "896538935424081920";
         const zomboidEmoji = "941193841107693599";
+        const partyEmoji = "991079037424271462";
+        const terrariaEmoji = "991080439592669254";
 
         //Listens for Reactions On and Off, and Assigns or Removes roles accordingly
               
@@ -60,6 +64,12 @@ module.exports = {
                 }
                 if(reaction.emoji.id === zomboidEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, zomboid]);
+                }
+                if(reaction.emoji.id === partyEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add([access, party]);
+                }
+                if(reaction.emoji.id === terrariaEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add([access, terraria]);
                 }
                 if(reaction.emoji.id === accessEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(access);
@@ -99,6 +109,12 @@ module.exports = {
                 }
                 if(reaction.emoji.id === zomboidEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([zomboid]);
+                }
+                if(reaction.emoji.id === partyEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove([party]);
+                }
+                if(reaction.emoji.id === partyEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove([terraria]);
                 }
              //  if(reaction.emoji.id === accessEmoji) {
              //     await reaction.message.guild.members.cache.get(user.id).roles.remove([access]);
