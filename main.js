@@ -59,5 +59,5 @@ client.on('message', message => {
     //}
 });
 
-client.login("OTQxMTA5NTU4Mjg4NDcwMDI2.YgRKkw.DiwD73h8phKCBVVlOLb0VJAwrW0");
-//client.login(process.env.DISCORD_RATBOT_TOKEN);
+
+client.login(process.env.DISCORD_RATBOT_TOKEN);
