@@ -21,6 +21,7 @@ module.exports = {
         const zomboid = await getRole("Zomboids");
         const party = await getRole("Party gamers");
         const terraria = await getRole("Terraria");
+        const eso = await getRole("Elder Scrolls Online");
 
         const accessEmoji = "935429715580309545";
         const owEmoji = "888581306529771590";
@@ -32,6 +33,7 @@ module.exports = {
         const zomboidEmoji = "941193841107693599";
         const partyEmoji = "708439567723921529";
         const terrariaEmoji = "991100062572744754";
+        const esoEmoji = "1010721037241036940";
 
         //Listens for Reactions On and Off, and Assigns or Removes roles accordingly
               
@@ -71,6 +73,9 @@ module.exports = {
                 }
                 if(reaction.emoji.id === terrariaEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add([access, terraria]);
+                }
+                if(reaction.emoji.id === esoEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add([access, eso]);
                 }
                 if(reaction.emoji.id === accessEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(access);
@@ -114,7 +119,10 @@ module.exports = {
                 if(reaction.emoji.id === partyEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([party]);
                 }
-                if(reaction.emoji.id === partyEmoji) {
+                if(reaction.emoji.id === esoEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.remove([eso]);
+                }
+                if(reaction.emoji.id === terrariaEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove([terraria]);
                 }
              //  if(reaction.emoji.id === accessEmoji) {
